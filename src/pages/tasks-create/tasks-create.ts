@@ -12,13 +12,16 @@ export class TasksCreatePage {
   isReadyToSave: boolean;
   item: any;
   isAndroid: boolean;
-  public db: DynamoDB
   private taskTable: string = 'ionic-mobile-hub-tasks';
 
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public viewCtrl: ViewController,
-              public platform: Platform) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public viewCtrl: ViewController,
+    public platform: Platform,
+    public user: User,
+    public db: DynamoDB,
+  ) {
     this.isAndroid = platform.is('android');
     this.item = {
       'taskId': navParams.get('id'),
