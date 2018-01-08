@@ -1,8 +1,4 @@
-# Ionic AWS Starter
-
-This Ionic starter comes with a pre-configured [AWS Mobile Hub](https://aws.amazon.com/mobile/) project set up to use Amazon DynamoDB, S3, Pinpoint, and Cognito.
-
-## Using the Starter
+# Coin Juice Starter
 
 ### Installing Ionic CLI 3.0
 
