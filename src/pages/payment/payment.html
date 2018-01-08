@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar mode="ios">
+    <ion-title TitleSpacing mode="ios">Payment</ion-title>
+  </ion-navbar>
+</ion-header>
+  
+<ion-content>
+  <form [formGroup]="billinginformationForm">    
+    <ion-card >
+      <ion-card-header>
+        <b>Billing Information</b>
+      </ion-card-header>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>First Name</ion-label>
+          <ion-input type="text" formControlName="firstName" maxlength="30"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Last Name</ion-label>
+          <ion-input type="text" formControlName="lastName" maxlength="30"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Street Address</ion-label>
+          <ion-input type="text" formControlName="streetAddress1" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>City</ion-label>
+          <ion-input type="text" formControlName="city" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>State/Province</ion-label>
+          <ion-input type="text" formControlName="state" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Zip Code</ion-label>
+          <ion-input type="tel" formControlName="postalCode" required></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card>    
+  </form>
+
+
+  <ion-card>
+    <ion-card-header>
+      <b>Credit Card Information</b>
+    </ion-card-header>
+    <ion-card-content>
+    
+      <ion-item>
+        <ion-label floating>Exp Month</ion-label>
+        <ion-select paddingOverride placeholder="" required [(ngModel)]="ccExpiryMonth">
+          <ion-option *ngFor="let month of expMonths">{{month}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Exp Year</ion-label>
+        <ion-select paddingOverride placeholder="" required [(ngModel)]="ccExpiryYear">
+          <ion-option *ngFor="let year of expYearsArray">{{year}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <form [formGroup]="cvvForm">
+        <ion-item>
+          <ion-label floating>CVV</ion-label>
+          <ion-input type="tel" formControlName="ccSecurity"  maxlength="4" minlength="3"></ion-input>
+        </ion-item>
+      </form>
+    
+    </ion-card-content>
+  </ion-card>
+
+  <button ion-button buttonStyle color="primary" block (click)="nextStep()">Save</button>
+
+</ion-content>
