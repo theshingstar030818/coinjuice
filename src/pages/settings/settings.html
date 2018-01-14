@@ -7,15 +7,59 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
+  <ion-list-header>Account</ion-list-header>
+  <ion-list>
+      <ion-item>
+        <ion-icon name="cash" item-start></ion-icon>
+        <ion-label>Native Currency</ion-label>
+        <ion-select [(ngModel)]="currency">
+          <ion-option value="usd">USD</ion-option>
+          <ion-option value="pkr">PKR</ion-option>
+          <ion-option value="inr">INR</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-icon name="clock" item-start></ion-icon>
+          <ion-label>Time Zone</ion-label>
+          <ion-select [(ngModel)]="timezone" interface="popover">
+            <ion-option value="islamabad">Islamabad</ion-option>
+            <ion-option value="gmt">GMT</ion-option>
+          </ion-select>
+        </ion-item>
+    <button ion-item>
+      <ion-icon name="call" item-start></ion-icon>
+      Phone Numbers
+    </button>
+  </ion-list>
+  <ion-list-header>Verification</ion-list-header>
+  <ion-list>
+      <button ion-item [navPush]="documentPage">
+        <ion-icon name="document" item-start></ion-icon>
+        Identity Document
+      </button>
+  </ion-list>
+  <ion-list-header>App</ion-list-header>
+  <ion-list>
+    <ion-item>
+        <ion-icon name="finger-print" item-start></ion-icon>
+        <ion-label>APP PIN</ion-label>
+        <ion-toggle color="energized" ></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <ion-list-header>Support</ion-list-header>
+  <ion-list>
+      <button ion-item (click)="openShareMenu()">
+        <ion-icon name="share" item-start></ion-icon>Share
+      </button>
       <button ion-item [navPush]="aboutPage">
-        About this app
+          <ion-icon name="information-circle" item-start></ion-icon>About this APP
       </button>
       <button ion-item [navPush]="accountPage">
-        Account
+          <ion-icon name="person" item-start></ion-icon>My Account
       </button>
       <button ion-item (click)="logout()">
-        <ion-label color="danger">Logout</ion-label>
+          <ion-icon name="log-out" item-start></ion-icon>
+          <ion-label color="danger">Logout</ion-label>
       </button>
     </ion-list>
 </ion-content>

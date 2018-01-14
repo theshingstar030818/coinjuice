@@ -1,12 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Transactions
-    </ion-title>
+    <ion-title>Accounts</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="addTask()">
+<!--       <button ion-button icon-only (click)="addTask()">
         <ion-icon name="add"></ion-icon>
-      </button>
+      </button> -->
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -32,6 +30,25 @@
           <button ion-button color="danger" (click)="deleteTask(item, idx)">DELETE</button>
         </ion-item-options>
       </ion-item-sliding>
+    </ion-list>
+
+    <ion-list>
+        <button ion-item *ngFor="let coin of coins" (click)="OpenWalletPage(coin)" icon-start>
+          <ion-avatar item-start>
+            <img [src]="'../assets/imgs/' + coin.logo" >
+          </ion-avatar>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <h2>{{ coin.symbol }} Wallet</h2>
+              </ion-col>
+              <ion-col>
+                <p text-right>0.00 $</p>
+                <p text-right>0.000000 {{ coin.symbol }}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </button>
     </ion-list>
 </ion-content>
 

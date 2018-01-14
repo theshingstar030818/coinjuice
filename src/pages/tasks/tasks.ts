@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 import { NavController, ModalController } from 'ionic-angular';
 import { TasksCreatePage } from '../tasks-create/tasks-create';
-
 import { DynamoDB, User } from '../../providers/providers';
+import { WalletPage } from '../wallet/wallet';
 
 declare var AWS: any;
 
@@ -16,6 +16,7 @@ export class TasksPage {
   public items: any;
   public refresher: any;
   private taskTable: string = 'ionic-mobile-hub-tasks';
+  public coins: any;
 
   constructor(
     public navCtrl: NavController,
@@ -25,6 +26,19 @@ export class TasksPage {
   ) {
 
     this.refreshTasks();
+
+    this.coins = [
+      {
+        'name'  : 'Cardano',
+        'symbol': 'ADA',
+        'logo'  : 'cardano-logo.jpg'
+      },
+      {
+        'name': 'Bitcoin',
+        'symbol': 'BTC',
+        'logo'  : 'bitcoin-logo.png'
+      }
+    ]
   }
 
   refreshData(refresher) {
@@ -99,6 +113,12 @@ export class TasksPage {
     }).catch((err) => {
       console.log('there was an error', err);
     });
+  }
+
+  OpenWalletPage(coin){
+
+    this.navCtrl.push(WalletPage,{ coin:coin });
+
   }
 
 }

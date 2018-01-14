@@ -12,9 +12,14 @@ import { ConfirmPage } from '../pages/confirm/confirm';
 import { SettingsPage } from '../pages/settings/settings';
 import { AboutPage } from '../pages/about/about';
 import { AccountPage } from '../pages/account/account';
+import { DocumentPage } from '../pages/document/document';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TasksPage } from '../pages/tasks/tasks';
 import { TasksCreatePage } from '../pages/tasks-create/tasks-create';
+import { PricesPage } from '../pages/prices/prices';
+import { PriceDetailPage } from '../pages/price-detail/price-detail';
+import { AlertsPage } from '../pages/alerts/alerts';
+import { WalletPage } from '../pages/wallet/wallet';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -36,9 +41,14 @@ import { Stripe } from '@ionic-native/stripe';
     SettingsPage,
     AboutPage,
     AccountPage,
+    DocumentPage,
     TabsPage,
     TasksPage,
-    TasksCreatePage
+    TasksCreatePage,
+    PricesPage,
+    PriceDetailPage,
+    AlertsPage,
+    WalletPage
   ],
   imports: [
     BrowserModule,
@@ -54,9 +64,14 @@ import { Stripe } from '@ionic-native/stripe';
     SettingsPage,
     AboutPage,
     AccountPage,
+    DocumentPage,
     TabsPage,
     TasksPage,
-    TasksCreatePage
+    TasksCreatePage,
+    PricesPage,
+    PriceDetailPage,
+    AlertsPage,
+    WalletPage
   ],
   providers: [
     StatusBar,
