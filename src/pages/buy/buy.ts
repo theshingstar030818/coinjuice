@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PriceDetailPage } from '../price-detail/price-detail';
 
 /**
- * Generated class for the PricesPage page.
+ * Generated class for the BuyPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,16 +10,15 @@ import { PriceDetailPage } from '../price-detail/price-detail';
 
 @IonicPage()
 @Component({
-  selector: 'page-prices',
-  templateUrl: 'prices.html',
+  selector: 'page-buy',
+  templateUrl: 'buy.html',
 })
-export class PricesPage { 
+export class BuyPage {
 
-  public refresher: any;
-  coins = [];
+  public coins: any ;
+  Scoin: string = "Cardano";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) { 
-
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.coins = [
       {
         'name'  : 'Cardano',
@@ -35,12 +33,5 @@ export class PricesPage {
     ]
   }
 
-  refreshData(refresher) {
-    this.refresher = refresher;
-  }
-
-  graphclick(coin){
-    this.navCtrl.push(PriceDetailPage,{ coin:coin });
-  }
 
 }

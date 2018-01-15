@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { App,Platform, ActionSheetController } from 'ionic-angular';
+import { App, Platform, ActionSheetController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { AboutPage } from '../about/about';
 import { AccountPage } from '../account/account';

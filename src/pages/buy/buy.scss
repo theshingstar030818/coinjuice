@@ -1,0 +1,20 @@
+page-buy {
+    .nopadding{
+        padding: 0;
+    }
+    .border-rt{
+        border-right: 1px solid #c8c7cc;
+    }
+    .input-wrapper{
+        padding: 10px 0 10px 16px;
+    }
+    .btn-span{
+        float: right;
+        color: #c8c7cc;
+    }
+    .fixed{
+        position: absolute;
+        bottom: 0px;
+        margin: 0px;
+    }
+}

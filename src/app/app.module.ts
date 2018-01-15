@@ -20,6 +20,7 @@ import { PricesPage } from '../pages/prices/prices';
 import { PriceDetailPage } from '../pages/price-detail/price-detail';
 import { AlertsPage } from '../pages/alerts/alerts';
 import { WalletPage } from '../pages/wallet/wallet';
+import { BuyPage } from '../pages/buy/buy';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -48,7 +49,8 @@ import { Stripe } from '@ionic-native/stripe';
     PricesPage,
     PriceDetailPage,
     AlertsPage,
-    WalletPage
+    WalletPage,
+    BuyPage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ import { Stripe } from '@ionic-native/stripe';
     PricesPage,
     PriceDetailPage,
     AlertsPage,
-    WalletPage
+    WalletPage,
+    BuyPage
   ],
   providers: [
     StatusBar,

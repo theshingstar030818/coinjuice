@@ -14,6 +14,14 @@
 
 
 <ion-content padding>
+  <ion-refresher (ionRefresh)="refreshData($event)">
+    <ion-refresher-content
+      pullingIcon="refresh-circle"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
     
   <ion-card *ngFor="let coin of coins" (click)="graphclick(coin)">
       <ion-grid>

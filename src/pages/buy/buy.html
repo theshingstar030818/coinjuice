@@ -1,0 +1,59 @@
+<!--
+  Generated template for the BuyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Buy</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="Scoin">
+      <ion-segment-button *ngFor="let coin of coins" [value]="coin.name" >
+        {{coin.symbol}}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <div [ngSwitch]="Scoin" *ngFor = "let coin of coins">
+
+    <div *ngSwitchCase="coin.name">
+      <ion-list>
+
+        <ion-item class="nopadding">
+          <ion-label fixed>Payment</ion-label>
+          <ion-input type="number" value="" placeholder="Visa Credit *******2452"></ion-input>
+        </ion-item>
+        <ion-grid class="nopadding">
+          <ion-row>
+            <ion-col class="nopadding border-rt">
+                <ion-item class="nopadding">
+                    <ion-label>CAD</ion-label>
+                    <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col class="nopadding">
+                <ion-item class="nopadding">
+                    <ion-label>{{coin.symbol}}</ion-label>
+                    <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <button ion-item class="nopadding">
+          Deposit To
+          <span class="btn-span">{{coin.symbol}} Wallet(0.00 {{coin.symbol}})</span>
+        </button>
+      </ion-list>
+      <button ion-button full class="fixed">Buy {{coin.name}}</button>
+    </div>
+  </div>
+
+</ion-content>

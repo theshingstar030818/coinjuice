@@ -8,11 +8,37 @@
 
   <ion-navbar>
     <ion-title>Alerts</ion-title>
+    <ion-buttons end>
+<!--       <button ion-button icon-only (click)="addAlert(coin)">
+        <ion-icon name="add"></ion-icon>
+      </button> -->
+    </ion-buttons>
   </ion-navbar>
-
+  <ion-toolbar no-border-top>
+      <ion-segment [(ngModel)]="Scoin">
+        <ion-segment-button *ngFor="let coin of coins" [value]="coin.name" >
+          {{coin.symbol}}
+        </ion-segment-button>
+      </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+    <div [ngSwitch]="Scoin" *ngFor = "let coin of coins">
+      <div *ngSwitchCase="coin.name">
+        <ion-list>
+          <ion-item>
+            <ion-avatar item-start>
+              <img [src]="'../assets/imgs/' + coin.logo" >
+            </ion-avatar>
+            <h2 item-start>{{coin.name}}</h2>
+            <h2 text-right>$14852</h2>
+          </ion-item>
+        </ion-list>
+        <button ion-button full (click)="addAlert(coin)" >Create Price Alert</button>
+      </div>
+      
+    </div>
 
 </ion-content>
