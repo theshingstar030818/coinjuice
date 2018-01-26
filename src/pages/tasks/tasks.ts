@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, Platform, ActionSheetController } from 'ionic-angular';
 import { TasksCreatePage } from '../tasks-create/tasks-create';
 import { DynamoDB, User } from '../../providers/providers';
 import { WalletPage } from '../wallet/wallet';
+import { CreateWalletPage } from '../create-wallet/create-wallet';
+import { RestoreWalletPage } from '../restore-wallet/restore-wallet';
 
 declare var AWS: any;
 
@@ -22,7 +24,9 @@ export class TasksPage {
     public navCtrl: NavController,
     public modalCtrl: ModalController,
     public user: User,
-    public db: DynamoDB
+    public db: DynamoDB,
+    public platform: Platform,
+    public actionsheetCtrl: ActionSheetController
   ) {
 
     this.refreshTasks();
@@ -32,11 +36,6 @@ export class TasksPage {
         'name'  : 'Cardano',
         'symbol': 'ADA',
         'logo'  : 'cardano-logo.jpg'
-      },
-      {
-        'name': 'Bitcoin',
-        'symbol': 'BTC',
-        'logo'  : 'bitcoin-logo.png'
       }
     ]
   }
@@ -113,6 +112,37 @@ export class TasksPage {
     }).catch((err) => {
       console.log('there was an error', err);
     });
+  }
+
+  addWallet(){
+    let actionSheet = this.actionsheetCtrl.create({
+      title: 'Add Wallet',
+      buttons: [
+        {
+          text: 'Create',
+          icon: 'add',
+          handler: () => {
+            this.navCtrl.push(CreateWalletPage,{ });
+          }
+        },
+        {
+          text: 'Restore',
+          icon: 'sync',
+          handler: () => {
+            this.navCtrl.push(RestoreWalletPage,{ });
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel', // will always sort to be on the bottom
+          icon: !this.platform.is('ios') ? 'close' : null,
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 
   OpenWalletPage(coin){

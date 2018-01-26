@@ -20,6 +20,8 @@ import { PricesPage } from '../pages/prices/prices';
 import { PriceDetailPage } from '../pages/price-detail/price-detail';
 import { AlertsPage } from '../pages/alerts/alerts';
 import { WalletPage } from '../pages/wallet/wallet';
+import { CreateWalletPage } from '../pages/create-wallet/create-wallet';
+import { RestoreWalletPage } from '../pages/restore-wallet/restore-wallet';
 import { BuyPage } from '../pages/buy/buy';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -32,6 +34,7 @@ import { StripProvider } from '../providers/strip/strip';
 import { StripeProvider } from '../providers/stripe/stripe';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Stripe } from '@ionic-native/stripe';
+import { AdaProvider } from '../providers/ada/ada';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,8 @@ import { Stripe } from '@ionic-native/stripe';
     PriceDetailPage,
     AlertsPage,
     WalletPage,
+    CreateWalletPage,
+    RestoreWalletPage,
     BuyPage
   ],
   imports: [
@@ -74,6 +79,8 @@ import { Stripe } from '@ionic-native/stripe';
     PriceDetailPage,
     AlertsPage,
     WalletPage,
+    CreateWalletPage,
+    RestoreWalletPage,
     BuyPage
   ],
   providers: [
@@ -87,7 +94,8 @@ import { Stripe } from '@ionic-native/stripe';
     StripProvider,
     StripeProvider,
     NativeStorage,
-    Stripe
+    Stripe,
+    AdaProvider
   ]
 })
 export class AppModule {}

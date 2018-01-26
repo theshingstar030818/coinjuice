@@ -15,9 +15,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WalletPage {
 
+  public tabs: any ;
+  Stab: string = "Summary";
   public currency : any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.currency = navParams.get('coin');
+
+    this.tabs = [
+      {
+        'name'  : 'Summary',
+        'iconsvg'  : '../assets/images/wallet-nav/summary-ic.inline.svg'
+      },
+      {
+        'name': 'Send',
+        'iconsvg'  : '../assets/images/wallet-nav/send-ic.inline.svg'
+      },
+      {
+        'name'  : 'Receive',
+        'iconsvg'  : '../assets/images/wallet-nav/receive-ic.inline.svg'
+      },
+      {
+        'name': 'Transactions',
+        'iconsvg'  : '../assets/images/wallet-nav/transactions-ic.inline.svg'
+      },
+      {
+        'name': 'Settings',
+        'iconsvg'  : '../assets/images/wallet-nav/wallet-settings-2-ic.inline.svg'
+      }
+    ]
   }
 
   buy(coin){

@@ -25,20 +25,19 @@
 
 <ion-content>
 
-    <div [ngSwitch]="Scoin" *ngFor = "let coin of coins">
-      <div *ngSwitchCase="coin.name">
-        <ion-list>
-          <ion-item>
-            <ion-avatar item-start>
-              <img [src]="'../assets/imgs/' + coin.logo" >
-            </ion-avatar>
-            <h2 item-start>{{coin.name}}</h2>
-            <h2 text-right>$14852</h2>
-          </ion-item>
-        </ion-list>
-        <button ion-button full (click)="addAlert(coin)" >Create Price Alert</button>
-      </div>
-      
+  <div [ngSwitch]="Scoin" *ngFor = "let coin of coins">
+    <div *ngSwitchCase="coin.name">
+      <ion-list>
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="'../assets/imgs/' + coin.logo" >
+          </ion-avatar>
+          <h2 item-start>{{coin.name}}</h2>
+          <h2 text-right>$14852</h2>
+        </ion-item>
+      </ion-list>
+      <button ion-button full (click)="addAlert(coin)" >Create Price Alert</button>
     </div>
+  </div>
 
 </ion-content>
